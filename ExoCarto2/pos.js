@@ -4,12 +4,10 @@ var options = {
     timeout: 5000,
     maximumAge: 0
   };
-
-  $("#pos").append("<p>mon texte</p>");
-  
+window.addEventListener("DOMContentLoaded", (event) => {  
   function success(pos) {
     var crd = pos.coords;
-    $("#pos").append(
+    $("#balisePos").append(
         $("<p>Votre position actuelle est :<p> "),
         $("<p>Latitude : "+crd.latitude+"<p>"),
         $("<p>Longitude : "+crd.longitude+"<p>"),
@@ -22,3 +20,4 @@ var options = {
   }
   
   navigator.geolocation.getCurrentPosition(success, error, options);
+})
