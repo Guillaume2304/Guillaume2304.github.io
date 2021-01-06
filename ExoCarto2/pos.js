@@ -4,6 +4,8 @@ var options = {
     timeout: 5000,
     maximumAge: 0
   };
+
+  $("#cartContent").append($("<p>Test<p>"));
   
   function success(pos) {
     var crd = pos.coords;
