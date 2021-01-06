@@ -5,7 +5,7 @@ var options = {
     maximumAge: 0
   };
 
-  $("#pos").append(Test);
+  $("#pos").append("Test");
   
   function success(pos) {
     var crd = pos.coords;
