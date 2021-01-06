@@ -12,7 +12,7 @@ if (window.DeviceOrientationEvent) {
             $("<br><br>")
         );
 
-        setTimeout(stopJump, 3*1000)
+        setTimeout(stopJump, 1000)
     });   
 }
 
