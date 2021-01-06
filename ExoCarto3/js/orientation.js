@@ -2,6 +2,9 @@ if (window.DeviceOrientationEvent) {
     window.addEventListener('deviceorientation', deviceOrientationHandler, false);
     document.getElementById("doeSupported").innerText = "Supported!";
   }
+  else{
+    document.getElementById("doeSupported").innerText = "Not Supported!";
+  }
 
   if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', deviceMotionHandler);
