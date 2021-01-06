@@ -1,7 +1,7 @@
 var src = document.getElementById("source");
 var clientX, clientY;
 
-$("#touch").append($("<h3>Position touch cliquée<h3>"));
+$("#touch").append($("<h3>Position cliquée<h3>"));
 
 src.addEventListener('touchstart', function(e) {    
   clientX = e.touches[0].clientX;
@@ -19,7 +19,7 @@ src.addEventListener('touchend', function(e) {
   deltaX = e.changedTouches[0].clientX - clientX;
   deltaY = e.changedTouches[0].clientY - clientY;
   $("#touch").append(
-    $("<p>X: "+clientX+"<p>"),
-    $("<p>Y: "+clientY+"<p>")
+    $("<p>X: "+deltaX+"<p>"),
+    $("<p>Y: "+deltaY+"<p>")
     );
 }, false);
