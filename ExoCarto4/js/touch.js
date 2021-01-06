@@ -1,4 +1,4 @@
-var src = document.getElementById("source");
+/*var src = document.getElementById("source");
 var clientX, clientY;
 
 $("#touch").append($("<h3>Position cliquée<h3>"));
@@ -28,4 +28,12 @@ src.addEventListener('touchend', function(e) {
     $("<p>X: "+deltaX+"<p>"),
     $("<p>Y: "+deltaY+"<p>")
     );
-}, false);
+}, false);*/
+document.getElementById("touchme").addEventListener("touchstart",
+function clicked(e) {
+    var br = document.getElementById("touchme").getBoundingClientRect();
+    // x & y are relative to the clicked element
+    var x = e.touches[0].clientX - br.left;
+    var y = e.touches[0].clientY - br.top;
+    console.log("x: " + x + " y: " + y);
+});
