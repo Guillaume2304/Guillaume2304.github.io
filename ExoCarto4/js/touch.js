@@ -4,11 +4,17 @@ var clientX, clientY;
 $("#touch").append($("<h3>Position cliquée<h3>"));
 
 src.addEventListener('touchstart', function(e) {    
-  clientX = e.touches[0].clientX;
-  clientY = e.touches[0].clientY;
+    if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        x = touch.pageX;
+        y = touch.pageY;
+    } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+        x = e.clientX;
+        y = e.clientY;
+    }
   $("#touch").append(
-      $("<p>X: "+clientX+"<p>"),
-      $("<p>Y: "+clientY+"<p>")
+      $("<p>X: "+x+"<p>"),
+      $("<p>Y: "+y+"<p>")
       );
 }, false);
 
