@@ -5,11 +5,11 @@ var options = {
     maximumAge: 0
   };
 
-  $("#cartContent").append($("<p>Test<p>"));
+  //$("#pos").append($("<p>Test<p>"));
   
   function success(pos) {
     var crd = pos.coords;
-    $("#cartContent").append(
+    $("#pos").append(
         $("<p>Votre position actuelle est :<p> "),
         $("<p>Latitude : "+crd.latitude+"<p>"),
         $("<p>Longitude : "+crd.longitude+"<p>"),
