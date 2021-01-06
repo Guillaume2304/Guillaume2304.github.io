@@ -31,9 +31,10 @@ src.addEventListener('touchend', function(e) {
 }, false);*/
 document.getElementById("touchme").addEventListener("touchstart",
 function clicked(e) {
-    var br = document.getElementById("touchme").getBoundingClientRect();
-    // x & y are relative to the clicked element
+    var br = document.getElementById("touchme").getBoundingClientRect();    
     var x = e.touches[0].clientX - br.left;
     var y = e.touches[0].clientY - br.top;
-    console.log("x: " + x + " y: " + y);
+    $("#touch").append(
+        $("x: " + x + " y: " + y)
+    );
 });
