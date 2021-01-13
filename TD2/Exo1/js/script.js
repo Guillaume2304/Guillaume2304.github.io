@@ -36,7 +36,7 @@ var options = {
     .openPopup();
 
     L.marker([43.7031691, 7.1827772]).addTo(map)
-    .bindPopup('Here we are in Nice')
+    .bindPopup('Here is Nice')
     .openPopup();
     //$("#mapcontainer").append(map)
   }
