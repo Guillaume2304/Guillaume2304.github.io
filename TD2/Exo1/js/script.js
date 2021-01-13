@@ -31,8 +31,8 @@ var options = {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([crd.latitude, crd.longitude]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    L.marker([43.7031691, 7.1827772]).addTo(map)
+    .bindPopup('Here we are in Nice')
     .openPopup();
     //$("#mapcontainer").append(map)
   }
