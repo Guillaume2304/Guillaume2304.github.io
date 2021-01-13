@@ -5,7 +5,7 @@ var options = {
     timeout: 5000,
     maximumAge: 0
   };
-      
+
 function success(pos) {
     var crd = pos.coords; 
 
@@ -24,7 +24,7 @@ function success(pos) {
         [17.9702607, -66.6639921]
     ]).addTo(map);  
     
-    var circle = L.circle([crd.latitude, longitude], {
+    var circle = L.circle([crd.latitude, crd.longitude], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
