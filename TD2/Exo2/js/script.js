@@ -29,7 +29,7 @@ function success(pos) {
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: crd.accuracy
-    }).addTo(mymap);
+    }).addTo(map);
   }  
   function error(err) {
     console.warn(`ERREUR (${err.code}): ${err.message}`);
