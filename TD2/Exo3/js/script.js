@@ -1,7 +1,8 @@
-const url="https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port&postcode=44380";
+const url="https://api-adresse.data.gouv.fr/search/?q=valbonne&type=street&limit=3";
 
 window.addEventListener("DOMContentLoaded", (event) => {
     $.getJSON(url, function(result){
-        console.log(result);
+        data=result.features;
+        console.log(data)
     });
 })
