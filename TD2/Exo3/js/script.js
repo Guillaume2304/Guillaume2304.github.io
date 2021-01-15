@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         data=result.features;
         console.log(data)
     
-        $("body").append($("<p>Les données récupérées sont affichées dans la console</p>"));
+        $("body").append($("<h3>Les données récupérées sont affichées dans la console</h3>"));
         var map = L.map('mapcontainer').setView([data[0].geometry.coordinates[1], data[0].geometry.coordinates[0]], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
