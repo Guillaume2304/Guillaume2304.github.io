@@ -20,14 +20,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
         console.log(data)
     
     
-        var map = L.map('mapcontainer').setView([data[0].geometry.coordinates[0], data[0].geometry.coordinates[1]], 13);
+        var map = L.map('mapcontainer').setView([data[0].properties.x, data[0].properties.y], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
 
         data.forEach(element => {
-            L.marker([element.geometry.coordinates[0], element.geometry.coordinates[0]]).addTo(map)
+            L.marker([element.properties.x, element.properties.x]).addTo(map)
             .bindPopup('Example of GeoJson data use')
             .openPopup();
 
