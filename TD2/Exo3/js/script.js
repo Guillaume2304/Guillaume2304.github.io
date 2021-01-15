@@ -1,13 +1,5 @@
 const url="https://api-adresse.data.gouv.fr/search/?q=valbonne&type=street&limit=3";
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    $.getJSON(url, function(result){
-        data=result.features;
-        console.log(data)
-    });
-})
-
-
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -21,7 +13,12 @@ var options = {
   };  
  
 
-     
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    $.getJSON(url, function(result){
+        data=result.features;
+        console.log(data)
+    });
     
     var map = L.map('mapcontainer').setView([data[0].geometry.coordinates[0], data[0].geometry.coordinates[1]], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -37,6 +34,13 @@ var options = {
         }
 
     );
+    
+})
+
+
+
+
+     
     
     
   
