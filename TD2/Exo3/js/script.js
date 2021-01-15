@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         console.log(data)
     
     
-        var map = L.map('mapcontainer').setView([data[0].properties.coordinates[1], data[0].geometry.coordinates[0]], 13);
+        var map = L.map('mapcontainer').setView([data[0].geometry.coordinates[1], data[0].geometry.coordinates[0]], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
