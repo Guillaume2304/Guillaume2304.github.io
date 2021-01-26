@@ -1,4 +1,4 @@
-function draw() {
+window.addEventListener("DOMContentLoaded", (event) => {
     var canvas = document.getElementById('canvas');
     if (canvas.getContext) {
       var ctx = canvas.getContext('2d');
@@ -53,11 +53,7 @@ function draw() {
             door.fill('brown');
             doorcolor = "brown";
         }
-    })
-   
-  
-  }
-  
-  window.addEventListener("DOMContentLoaded", (event) => {
-      draw();
+    }) 
+
+     
   })
