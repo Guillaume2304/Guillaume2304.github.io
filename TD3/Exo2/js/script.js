@@ -17,7 +17,10 @@ let material = new THREE.MeshLambertMaterial({color: 0xD2691E});
 
 const texture = new THREE.TextureLoader().load( '../textures/texture.jpg' );
 
-let cube = new THREE.Mesh(geometry, material);
+const materialTex = new THREE.MeshBasicMaterial( { map: texture } );
+
+
+let cube = new THREE.Mesh(geometry, materialTex);
 
 scene.add(cube);
 
