@@ -30,7 +30,7 @@ const loader = new THREE.GLTFLoader();
 			// Load a glTF resource
 			loader.load(
 				// resource URL
-				'../models/Broken Container.gltf',
+				'../models/wooden crate.glb',
 				// called when the resource is loaded
 				function ( gltf ) {
 ​
