@@ -24,6 +24,32 @@ let cube = new THREE.Mesh(geometry, materialTex);
 
 scene.add(cube);
 
+// Instantiate a loader
+const loader = new THREE.GLTFLoader();
+​
+			// Load a glTF resource
+			loader.load(
+				// resource URL
+				'../models/Broken Container.gltf',
+				// called when the resource is loaded
+				function ( gltf ) {
+​
+					scene.add( gltf.scene );
+				},
+				// called while loading is progressing
+				function ( xhr ) {
+​
+					console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+​
+				},
+				// called when loading has errors
+				function ( error ) {
+​
+					console.log( 'An error happened' );
+​
+				}
+			);
+
 const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
 
