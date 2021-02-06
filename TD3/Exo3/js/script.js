@@ -3,7 +3,7 @@
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
 
-camera.position.set(2,0,5);
+camera.position.set(3,0,5);
 
 let rendu = new THREE.WebGLRenderer();
 rendu.setSize(window.innerWidth, window.innerHeight);
