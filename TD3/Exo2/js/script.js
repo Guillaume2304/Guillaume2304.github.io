@@ -15,7 +15,7 @@ let geometry = new THREE.BoxGeometry();
 
 let material = new THREE.MeshLambertMaterial({color: 0xD2691E});
 
-const texture = new THREE.TextureLoader().load( '../textures/texture.jpg' );
+const texture = new THREE.TextureLoader().load( './textures/texture.jpg' );
 
 const materialTex = new THREE.MeshBasicMaterial( { map: texture } );
 
@@ -27,7 +27,7 @@ scene.add(cube);
 const loader = new THREE.GLTFLoader();
 
 loader.load(
-	'../models/wooden crate.glb',
+	'./models/wooden crate.glb',
 	function (gltf){
 		scene.add(gltf.scene);
 	},
