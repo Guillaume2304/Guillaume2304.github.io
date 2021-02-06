@@ -50,17 +50,21 @@ camera.position.z=5;
 
 let animer = function animer(){
     requestAnimationFrame(animer);
+	cube.rotation.y += 0.005;
+	cube.rotation.x += 0.006;	
+
 	if (window.DeviceOrientationEvent) {
 		window.addEventListener('deviceorientation', function process(event) {
 			var alpha = event.alpha;
 			var beta = event.beta;
 			var gamma = event.gamma;
-			cube.rotation.y = gamma;		
+			
+			gltf.scene.rotation.y = gamma;
 	
 			
 		});   
 	}
-    //cube.rotation.x += 0.006;
+    
     
 	
 
