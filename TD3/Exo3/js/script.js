@@ -11,11 +11,11 @@ rendu.setClearColor(0x000000);
 document.body.appendChild(rendu.domElement);
 
 
-let geometry = new THREE.SphereGeometry( 3, 32, 32 );
+let geometry = new THREE.SphereGeometry( 2, 32, 32 );
 
 let material = new THREE.MeshLambertMaterial({color: 0xD2691E});
 
-const texture = new THREE.TextureLoader().load( './textures/texture.jpg' );
+const texture = new THREE.TextureLoader().load( './textures/texture.png' );
 
 const materialTex = new THREE.MeshBasicMaterial( { map: texture } );
 
