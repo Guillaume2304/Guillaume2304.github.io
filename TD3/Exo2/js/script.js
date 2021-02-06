@@ -2,7 +2,8 @@
 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
-let controls = new DeviceOrientationControls(camera);
+var device = new THREEx.DeviceOrientationState();
+
 
 camera.position.set(2,0,5);
 
@@ -49,9 +50,9 @@ camera.position.z=5;
 
 let animer = function animer(){
     requestAnimationFrame(animer);
-    cube.rotation.x += 0.006;
-    cube.rotation.y += 0.005;
-	controls.update();
+    //cube.rotation.x += 0.006;
+    cube.rotation.y = device.angleY();
+	
 
     rendu.render(scene, camera);
 }
