@@ -30,7 +30,7 @@ scene.add( light );
 const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.5 );
 scene.add( directionalLight );
 
-camera.position.z=5;
+//camera.position.z=5;
 
 let animer = function animer(){
     requestAnimationFrame(animer);
