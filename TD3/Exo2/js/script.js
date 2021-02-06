@@ -50,8 +50,18 @@ camera.position.z=5;
 
 let animer = function animer(){
     requestAnimationFrame(animer);
+	if (window.DeviceOrientationEvent) {
+		window.addEventListener('deviceorientation', function process(event) {
+			var alpha = event.alpha;
+			var beta = event.beta;
+			var gamma = event.gamma;
+			cube.rotation.y = gamma;		
+	
+			
+		});   
+	}
     //cube.rotation.x += 0.006;
-    cube.rotation.y = device.angleY();
+    
 	
 
     rendu.render(scene, camera);
