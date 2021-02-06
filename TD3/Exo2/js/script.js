@@ -32,6 +32,17 @@ loader.load(
 	'./models/wooden crate.glb',
 	function (gltf){
 		scene.add(gltf.scene);
+		if (window.DeviceOrientationEvent) {
+			window.addEventListener('deviceorientation', function process(event) {
+				var alpha = event.alpha;
+				var beta = event.beta;
+				var gamma = event.gamma;
+				
+				gltf.scene.rotation.y = gamma;
+		
+				
+			});   
+		}
 	},
 	function (xhr){
 		console.log((xhr.loaded/xhr.total*100)+'% loaded');
@@ -51,21 +62,7 @@ camera.position.z=5;
 let animer = function animer(){
     requestAnimationFrame(animer);
 	cube.rotation.y += 0.005;
-	cube.rotation.x += 0.006;	
-
-	if (window.DeviceOrientationEvent) {
-		window.addEventListener('deviceorientation', function process(event) {
-			var alpha = event.alpha;
-			var beta = event.beta;
-			var gamma = event.gamma;
-			
-			gltf.scene.rotation.y = gamma;
-	
-			
-		});   
-	}
-    
-    
+	cube.rotation.x += 0.006;	   
 	
 
     rendu.render(scene, camera);
