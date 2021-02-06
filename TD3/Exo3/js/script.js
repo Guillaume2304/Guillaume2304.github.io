@@ -11,7 +11,7 @@ rendu.setClearColor(0x000000);
 document.body.appendChild(rendu.domElement);
 
 
-let geometry = new THREE.SphereGeometry( 2, 32, 32 );
+let geometry = new THREE.SphereGeometry( 1, 32, 32 );
 
 let material = new THREE.MeshLambertMaterial({color: 0xD2691E});
 
