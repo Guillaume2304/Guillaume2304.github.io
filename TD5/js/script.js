@@ -26,15 +26,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
           
             var canvas = document.getElementById('canvas');
             ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
-            
+
             function drawRotated(angle) {
               var ctx = canvas.getContext('2d');
               
-              ctx.clearRect(0,0,canvas.width,canvas.height);
+              ctx.clearRect(0,0,arrow.width,arrow.height);
               ctx.save();
-              ctx.translate(canvas.width/2,canvas.height/2);
+              ctx.translate(arrow.width/2,arrow.height/2);
               ctx.rotate(angle*Math.PI/180); 
-              ctx.drawImage(arrow, 0, 0, arrow.width, arrow.height, 0, 0, canvas.width, canvas.height );
+              ctx.drawImage(arrow, -arrow.width/2, -arrow.width/2 );
               //ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.restore();
               
