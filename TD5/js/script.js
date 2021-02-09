@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             var alpha = event.alpha;
             var beta = event.beta;
             var gamma = event.gamma;  
+            var angle;
             
             var options = {
                 enableHighAccuracy: true,
@@ -13,7 +14,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             function success(pos) {
                 var crd = pos.coords;
-                var northAngle = crd.heading;
+                angle = crd.heading;
             }
             
             function error(err) {
@@ -24,18 +25,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
                
           
             var canvas = document.getElementById('canvas');
-            if (canvas.getContext) {
+            ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
+            
+            function drawRotated(angle) {
               var ctx = canvas.getContext('2d');
-              ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
+              
               ctx.clearRect(0,0,canvas.width,canvas.height);
               ctx.save();
               ctx.translate(canvas.width/2,canvas.height/2);
-              ctx.rotate(alpha*Math.PI/180); 
+              ctx.rotate(angle*Math.PI/180); 
               ctx.drawImage(arrow, 0, 0, arrow.width, arrow.height, 0, 0, canvas.width, canvas.height );
               //ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.restore();
               
             }
+            drawRotated(angle);
             
         });   
     }
