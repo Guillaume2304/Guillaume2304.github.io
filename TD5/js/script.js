@@ -27,19 +27,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
             var canvas = document.getElementById('canvas');
            
 
-            function drawRotated(angle) {
+            function drawRotated(alpha) {
               var ctx = canvas.getContext('2d');
                ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
               ctx.clearRect(0,0,arrow.width,arrow.height);
               ctx.save();
               ctx.translate(arrow.width/2,arrow.height/2);
-              ctx.rotate(angle*Math.PI/180); 
+              ctx.rotate(alpha*Math.PI/180); 
               ctx.drawImage(arrow, -arrow.width/2, -arrow.width/2 );
               //ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.restore();
               
             }
-            drawRotated(angle);
+            drawRotated(alpha);
         });
     }
 })
