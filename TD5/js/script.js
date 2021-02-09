@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             function drawRotated(angle) {
               var ctx = canvas.getContext('2d');
               
-              ctx.clearRect(0,0,canvas.width,canvas.height);
+              ctx.clearRect(0,0,arrow.width,arrow.height);
               ctx.save();
               ctx.translate(arrow.width/2,arrow.height/2);
               ctx.rotate(angle*Math.PI/180); 
