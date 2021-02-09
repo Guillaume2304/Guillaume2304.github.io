@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             var beta = event.beta;
             var gamma = event.gamma;  
             var angle;
-            
+            ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
             var options = {
                 enableHighAccuracy: true,
                 timeout: 5000,
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
             function drawRotated(angle) {
               var ctx = canvas.getContext('2d');
-               ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
+              
               ctx.clearRect(0,0,canvas.width,canvas.height);
               ctx.save();
               ctx.translate(arrow.width/2,arrow.height/2);
