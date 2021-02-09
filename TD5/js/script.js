@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
               ctx.restore();
               
             }
-            drawRotated(angle);
+            drawRotated(alpha);
         });
     }
 })
