@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             if (canvas.getContext) {
               var ctx = canvas.getContext('2d');
               ctx.drawImage(compass, 0, 0, compass.width, compass.height, 0, 0, canvas.width, canvas.height );
+              ctx.clearRect(0,0,canvas.width,canvas.height);
               ctx.save();
               ctx.translate(canvas.width/2,canvas.height/2);
               ctx.rotate(alpha*Math.PI/180); 
