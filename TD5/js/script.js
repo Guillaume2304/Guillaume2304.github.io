@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
              
               ctx.rotate(alpha); 
               ctx.drawImage(arrow, 0, 0, arrow.width, arrow.height, 0, 0, canvas.width, canvas.height );
-           
+              ctx.setTransform(1, 0, 0, 1, 0, 0);
               
             }
             
