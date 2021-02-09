@@ -33,7 +33,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
               ctx.clearRect(0,0,arrow.width,arrow.height);
               ctx.save();
               ctx.translate(arrow.width/2,arrow.height/2);
-              ctx.rotate(angle*Math.PI/180); 
+              if (angle > 0){ctx.rotate(-angle*Math.PI/180);}
+              else {ctx.rotate(angle*Math.PI/180);} 
               ctx.drawImage(arrow, -arrow.width/2, -arrow.width/2 );
               //ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.restore();
